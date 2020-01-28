@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>{% if page.title %}{{site.title}}{% endif %}</title>
+	<meta name="description" content="{% if page.description %} {{page.description}} {% endif %} "/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1456426-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1456426-1');
+</script>
+
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NBFP3CV');</script>
+<!-- End Google Tag Manager -->
+
+
+</head>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBFP3CV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <div id="canvas">
+
+        <header class="header cf" role="banner">
+            <div class="logo">
+                <a href="/" class="a-no-link" rel="home"><span class="logobreak">Philip Twine.</a>
+
+            </div>
+
+            <div class="nav">
+              <ul class="menu cf">
+
+            {% for n in site.navigation %}
+              {% if page.title contains n.title %}
+                  <li><a href="{{n.url}}" class="al active">{{n.title}}</a></li>
+              {% else %}
+                  <li><a href="{{n.url}}">{{n.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+
+              </ul>
+
+	       </div>
+        </header>
+
+        <div id="container">
+

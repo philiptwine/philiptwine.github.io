@@ -1,0 +1,88 @@
+$grid-columns: 12;
+
+// --------------------------------------------------------------
+// horizontal breakpoints
+// --------------------------------------------------------------
+// Breakpoint Mobile
+$bm: "only screen and (max-width: 414px)";
+// Breakpoint Desktop
+$bd: "only screen and (min-width: 768px)";
+$bdlg: "only screen and (min-width: 1400px)";
+$bt: "only screen and (min-width: 414px) and (max-width: 768px)";
+// --------------------------------------------------------------
+
+%clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.clearfix:after,
+.cf:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+}
+.clearfix, .cf { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix,
+* html .cf { height: 1%; }
+.clearfix,
+.cf { display: block; }
+/* close commented backslash hack */
+
+img {
+	/* width: auto; */
+	max-width: 100%;
+	/* height: auto !important; */
+	text-align: center;
+}
+
+.wrap-fluid {
+	float: left;
+	@media #{$bm} {
+		width: auto;
+	}
+}
+
+.row {
+	@extend %clearfix;
+	margin-bottom: $sp2;
+}
+
+[class*='col-'] {
+	float: left;
+	width: 100%;
+	min-height: 1px;
+	padding: 0.6rem 0;
+}
+
+@media #{$bd} {
+	@for $i from 1 through $grid-columns {
+	  	.col-#{$i} {
+	  		width: 100% / $grid-columns * $i;
+	  		position: relative;
+			padding: 1rem 0;
+	  	}
+	}
+	.home-container .row {
+		margin-bottom: $sp4;	
+	}
+}
+
+.row:last-child {
+	margin-bottom: 0;
+}
+
+.centered {
+	float: none;
+	margin: 0 auto;
+}
