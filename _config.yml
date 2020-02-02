@@ -1,1 +1,17 @@
 theme: jekyll-theme-midnight
+
+# Set permalinks for all pages
+permalink: /:categories/:title
+
+# Name of website
+title: Philip Twine — Product Design
+
+# Temporarialy exclude Project dir
+exclude: [projects, archive, stylesheets, bower_components]
+
+# Set variables for navigation
+navigation:
+- title: Work
+  url:  /
+- title: About
+  url:  /about/
