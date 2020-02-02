@@ -9,7 +9,7 @@ exclude: [projects, archive, stylesheets, bower_components]
 
 # Set variables for navigation
 navigation:
-- title: Work
+- title: Portfolio
   url:  /
 - title: About
   url:  /about/
