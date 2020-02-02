@@ -1,0 +1,35 @@
+---
+title: Work
+description: I lead teams to create user-centered digital experiences.
+---
+
+
+
+<div class="row">
+        <div class="intro">
+            <h1>I lead teams to create user-centered digital experiences</h1>
+        </div>
+    </div>
+
+{% for post in site.categories.work %}
+
+<div class="row">   
+        <article class="home-project indexclearfix cb">
+            <div class="image">
+                <img class="hero-image" src="{{ post.image }}"/>
+            </div>
+            <div class="info">
+                <h2>{{ post.title }}</h2>
+                <h3>{{ post.year }} &#8901; {{ post.role }} &#8901; {{ post.platform }}</h3>
+                <p>{{ post.description }}</p>
+                {% if post.appstorelink %}
+                    <p class="read-more"><a href="{{ post.appstorelink }}" class="al">View in App Store</a></p>
+                {% endif %}
+            </div>
+        </article>
+</div>
+
+
+    {% endfor %}
+
+
