@@ -11,10 +11,10 @@ description: I lead teams to create user-centered digital experiences.
         </div>
     </div>
 
-{% for post in site.categories.work %}
 
-<div class="row">   
-        <article class="home-project indexclearfix cb fadein">
+<div class="gallery">
+{% for post in site.categories.work %}
+        <div class="home-project flex indexclearfix cb fadein">
             <div class="image">
                 <img class="hero-image" src="{{ post.image }}"/>
             </div>
@@ -25,10 +25,9 @@ description: I lead teams to create user-centered digital experiences.
                     <p class="read-more"><a href="{{ post.appstorelink }}" class="al">View in App Store</a></p>
                 {% endif %}
             </div>
-        </article>
+        </div>
+{% endfor %}
+
 </div>
-
-
-    {% endfor %}
 
 {% include footer.html %}
