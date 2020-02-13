@@ -55,7 +55,7 @@ img {
 
 .row {
 	@extend %clearfix;
-	margin-bottom: $sp2;
+	margin-bottom: 0;
 }
 
 [class*='col-'] {
