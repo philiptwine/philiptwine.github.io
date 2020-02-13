@@ -12,8 +12,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: $sp2;
+    height: $sp2;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -21,42 +21,40 @@
 
     cursor: pointer;
     z-index: 1000;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: black;
+    color: $c1;
+    background: $c5;
+    border: 2px solid $ca1;
+    border-radius: 44px;
+    opacity: 1;
 }
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus
 {
-    color: transparent;
-    outline: none;
-    background: transparent;
+    background: $ca1;
+    color: $c5;
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
 .slick-next:focus:before
 {
-    opacity: 1;
+    opacity: 1 !important;
 }
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
 {
-    opacity: .25;
+    opacity: 0.2 !important;
 }
 
 .slick-prev:before,
 .slick-next:before
 {
-    font-family: 'slick';
-    font-size: 20px;
+    font-size: $fs2;
     line-height: 1;
 
-    opacity: .75;
-    color: white;
+    color: $c1; 
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -125,8 +123,8 @@
 
     display: inline-block;
 
-    width: 20px;
-    height: 20px;
+    width: $sp1;
+    height: $sp1;
     margin: 0 5px;
     padding: 0;
 
@@ -139,8 +137,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: $sp1;
+    height: $sp1;
     padding: 5px;
 
     cursor: pointer;
@@ -162,27 +160,26 @@
 }
 .slick-dots li button:before
 {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: $sp1;
+    line-height: $sp1;
 
     position: absolute;
     top: 0;
     left: 0;
 
-    width: 20px;
-    height: 20px;
+    width: $sp3;
+    height: $sp3;
 
     content: '•';
     text-align: center;
 
-    opacity: .25;
-    color: black;
+    color: $c1;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before
 {
-    opacity: .75;
-    color: black;
+    color: $ca1;
+    font-size: $sp3;
 }
