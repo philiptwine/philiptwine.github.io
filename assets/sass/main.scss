@@ -135,6 +135,7 @@ a {
 	margin: 0 auto;
 }
 
+<<<<<<< HEAD
 .home-project .flex {
 }
 
@@ -143,6 +144,20 @@ a {
 	margin-bottom: $sp4;
 	background: $bgr1;
 	padding: 0 $sp1;	
+=======
+.intro {
+	max-width: 800px;
+	margin-bottom: $sp4;
+	background: $bgr1;
+	padding: 0 $sp1;
+	border-top: 1px solid $c1;
+}
+
+.home-project.flex {
+	display: flex !important;
+	flex-wrap: wrap;
+	justify-content: center;
+>>>>>>> parent of 4f1cbdb... Removed extra info and dotted nav
 }
 
 .home-project {
@@ -155,12 +170,14 @@ a {
 }
 
 .home-project .image {
+	order: 1;
 	text-align: center;
 }
 
 .home-project .info {
 <<<<<<< HEAD
 	margin: $sp1;
+<<<<<<< HEAD
 	max-width: 300px;
 	text-align: center;
 	margin: 0 auto;
@@ -170,6 +187,11 @@ a {
 	text-align: left;
 
 >>>>>>> parent of 58eb212... Work in progress
+=======
+	order: 2;
+	text-align: left;
+	border-top: 1px solid $c1;
+>>>>>>> parent of 4f1cbdb... Removed extra info and dotted nav
 }
 
 @media #{$bd} {
@@ -180,11 +202,12 @@ a {
 
 <<<<<<< HEAD
 	.home-project {
-		height: 750px !important;
+		height: 700px !important;
 	}
 
 	.home-project .image {
-		max-height: 650px;
+		flex-basis: 50%;
+		max-height: 700px;
 	}
 
 =======
@@ -194,10 +217,11 @@ a {
 	}
 
 	.home-project .info {
+		flex-basis: 30%;
 	}
 
 	.hero-image {
-		max-height: 650px;
+		max-height: 700px;
 	}
 }
 
