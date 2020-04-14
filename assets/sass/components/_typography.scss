@@ -37,10 +37,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1  {
-	font-size: $fs8;
-	line-height: $fs5+0.5rem;
-	margin-bottom: $sp3;
-	letter-spacing: -0.1rem;
+	font-size: $fs2;
+	line-height: 0;
 }	
 
 h2 {
@@ -122,11 +120,3 @@ p + p {
 	font-size: 0.9rem;
 }
 
-//// Desktop styles
-
-@media #{$bd} {
-	h1 {
-		font-size: $fs7;
-		line-height: $fs7+0.3rem;
-	}
-}
