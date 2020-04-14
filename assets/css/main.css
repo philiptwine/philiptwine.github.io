@@ -1,32 +1,28 @@
 /*
-Error: Invalid CSS after "... and dotted nav": expected "{", was "}"
-        on line 161 of sass/main.scss
+Error: Invalid CSS after "	margin: $sp1": expected "{", was ";"
+        on line 163 of sass/main.scss
 
-156: .home-project.flex {
-157: 	display: flex !important;
-158: 	flex-wrap: wrap;
-159: 	justify-content: center;
-160: >>>>>>> parent of 4f1cbdb... Removed extra info and dotted nav
-161: }
-162: 
-163: .home-project {
-164: 	display: flex !important;
-165: 	flex-wrap: wrap;
-166: 	justify-content: center;
+158: 	text-align: center;
+159: }
+160: 
+161: .home-project .info {
+162: <<<<<<< HEAD
+163: 	margin: $sp1;
+164: 	max-width: 300px;
+165: 	text-align: center;
+166: 	margin: 0 auto;
+167: =======
+168: 	margin: -$sp1 $sp1 0;
 
 Backtrace:
-sass/main.scss:161
+sass/main.scss:163
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1233:in `tok!'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:688:in `block'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
-/usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
-/usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
-/usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
-/usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
-/usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+/usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:697:in `block_contents'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:681:in `ruleset'
 /usr/local/lib/ruby/gems/2.6.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
@@ -54,4 +50,4 @@ sass/main.scss:161
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"... and dotted nav\": expected \"{\", was \"}\"\A         on line 161 of sass/main.scss\A \A 156: .home-project.flex {\A 157: 	display: flex !important;\A 158: 	flex-wrap: wrap;\A 159: 	justify-content: center;\A 160: >>>>>>> parent of 4f1cbdb... Removed extra info and dotted nav\A 161: }\A 162: \A 163: .home-project {\A 164: 	display: flex !important;\A 165: 	flex-wrap: wrap;\A 166: 	justify-content: center;"; }
+  content: "Error: Invalid CSS after \"	margin: $sp1\": expected \"{\", was \";\"\A         on line 163 of sass/main.scss\A \A 158: 	text-align: center;\A 159: }\A 160: \A 161: .home-project .info {\A 162: <<<<<<< HEAD\A 163: 	margin: $sp1;\A 164: 	max-width: 300px;\A 165: 	text-align: center;\A 166: 	margin: 0 auto;\A 167: =======\A 168: 	margin: -$sp1 $sp1 0;"; }
