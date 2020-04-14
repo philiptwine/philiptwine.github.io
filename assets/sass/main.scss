@@ -134,23 +134,15 @@ a {
 	margin: 0 auto;
 }
 
-.home-project .flex {
-}
-
-.intro {
-	max-width: 1024px;
-	margin-bottom: $sp4;
-	background: $bgr1;
-	padding: 0 $sp1;	
-}
-
-.home-project {
+.home-project.flex {
 	display: flex !important;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+
+.home-project {
 	align-items: center;
 	margin: 0 auto;
-	padding: $sp3 0;
 }
 
 .home-project .image {
@@ -177,10 +169,6 @@ a {
 
 	.home-project .image {
 		max-height: 650px;
-	}
-
-	.home-project .image {
-		flex-basis: 50%;
 	}
 
 	.home-project .info {
@@ -216,3 +204,4 @@ article {
 		width: 100%;
 	}
 }
+
