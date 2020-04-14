@@ -11,9 +11,7 @@ html {
 }
 body {
 	color: $c2;
-	//background: url(/assets/images/background.png) top right;
-	//background-repeat: no-repeat;
-	//background-size: 600px 400px;
+	background: url('/assets/images/background.png') top no-repeat;
 }
 
 img {
@@ -65,13 +63,16 @@ a {
 .header {
 	font-size: $fs1;
 	color: $c1;
-	padding: $sp1;
-	max-width: 1024px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 $sp1;
 }
 
 .logo {
-	order: 0;
-	font-size: $fs1;
+	order: 1;
+	font-size: 1.2rem;
 }
 
 .header a {
@@ -79,7 +80,7 @@ a {
 }
 
 .nav {
-	order: 1;
+	order: 2;
 	color: $c1;
 	margin-left: auto;
 }
@@ -105,9 +106,9 @@ a {
 }
 
 
-@media #{$bd} {
+@media #{$bt}, #{$bd} {
 	.header {
-		padding: $sp1 0 $sp3 $sp4;
+		padding: $sp1 $sp3; 
 	}
 	
 	.nav ul {
@@ -158,17 +159,23 @@ a {
 }
 
 .home-project .info {
+<<<<<<< HEAD
 	margin: $sp1;
 	max-width: 300px;
 	text-align: center;
 	margin: 0 auto;
+=======
+	margin: -$sp1 $sp1 0;
+	order: 2;
+	text-align: left;
+
+>>>>>>> parent of 58eb212... Work in progress
 }
 
 @media #{$bd} {
 
 	.intro {
-		padding: 0 $sp3;
-		margin: 0 auto;
+		padding: 0 $sp3;	
 	}
 
 <<<<<<< HEAD
