@@ -527,12 +527,9 @@ h1 {
   line-height: 0; }
 
 h2 {
-  font-size: 2rem !important;
+  font-size: 1.6rem !important;
   margin-top: -1.6rem;
   letter-spacing: -0.05rem; }
-
-h2::after {
-  content: "."; }
 
 h3, h4, h5, h6 {
   font-size: 1rem !important;
@@ -542,12 +539,15 @@ h4 {
   color: #555; }
 
 .home-project .info h2 {
-  margin: 0 0 0.2rem 0; }
+  margin: 0; }
 
 .home-project .info h3 {
   margin: 0;
   font-family: Inter-Regular, sans-serif;
   margin-bottom: 1rem; }
+
+.appstorelink {
+  font-size: 1rem; }
 
 .home-project .read-more {
   font-family: Inter-Bold, sans-serif;
@@ -562,9 +562,6 @@ h4 {
   font-family: Inter-Regular, sans-serif;
   font-size: 0.9rem !important;
   margin: 0.5rem 0 0 0; }
-
-.project-intro h2::after {
-  content: ""; }
 
 .text h2:first-child {
   margin-top: 0; }
@@ -1036,13 +1033,6 @@ a {
   transition: all 0.2s ease;
   margin: 0 auto; }
 
-.intro {
-  max-width: 800px;
-  margin-bottom: 4rem;
-  background: #FFF;
-  padding: 0 1rem;
-  border-top: 1px solid #000; }
-
 .home-project.flex {
   display: flex !important;
   flex-wrap: wrap;
@@ -1053,14 +1043,13 @@ a {
   margin: 0 auto; }
 
 .home-project .image {
-  order: 1;
   text-align: center; }
 
 .home-project .info {
   margin: 1rem;
-  order: 2;
-  text-align: left;
-  border-top: 1px solid #000; }
+  max-width: 300px;
+  text-align: center;
+  margin: 0 auto; }
 
 @media only screen and (min-width: 768px) {
   .intro {
@@ -1068,17 +1057,13 @@ a {
     margin: 0 auto; }
 
   .home-project {
-    height: 700px !important; }
+    height: 750px !important; }
 
   .home-project .image {
-    flex-basis: 50%;
-    max-height: 700px; }
-
-  .home-project .info {
-    flex-basis: 30%; }
+    max-height: 650px; }
 
   .hero-image {
-    max-height: 700px; } }
+    max-height: 650px; } }
 .footer {
   width: 100%;
   position: relative;
