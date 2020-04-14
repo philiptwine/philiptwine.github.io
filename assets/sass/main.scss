@@ -144,12 +144,15 @@ a {
 	margin-bottom: $sp4;
 	background: $bgr1;
 	padding: 0 $sp1;	
+<<<<<<< HEAD
 =======
 .intro {
 	max-width: 1024px;
 	margin-bottom: $sp4;
 	background: $bgr1;
 	padding: 0 $sp1;	
+=======
+>>>>>>> parent of 58eb212... Work in progress
 }
 
 .home-project.flex {
@@ -176,6 +179,7 @@ a {
 .home-project .info {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin: $sp1;
 <<<<<<< HEAD
 	max-width: 300px;
@@ -192,6 +196,12 @@ a {
 	text-align: left;
 	border-top: 1px solid $c1;
 >>>>>>> parent of 4f1cbdb... Removed extra info and dotted nav
+=======
+	margin: -$sp1 $sp1 0;
+	order: 2;
+	text-align: left;
+
+>>>>>>> parent of 58eb212... Work in progress
 =======
 	margin: -$sp1 $sp1 0;
 	order: 2;
