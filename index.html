@@ -5,16 +5,18 @@ description: I lead teams to create user-centered digital experiences.
 
 {% include header.html %}
 
-<div class="row">
-    <div class="intro fadein">
+<div class="fadein">
+
+<div class="row fadein delay2">
+    <div class="intro">
         <h1>I lead product design teams to create elegant digital experiences.</h1>
     </div>
 </div>
 
 {% for post in site.categories.work %}
 
-<div class="row">   
-        <article class="home-project indexclearfix cb fadein">
+<div class="row fadein delay3">   
+        <article class="home-project indexclearfix cb">
             <div class="image">
                 <img class="hero-image" src="{{ post.image }}"/>
             </div>
@@ -29,7 +31,8 @@ description: I lead teams to create user-centered digital experiences.
         </article>
 </div>
 
-
     {% endfor %}
+
+</div>
 
 {% include footer.html %}
