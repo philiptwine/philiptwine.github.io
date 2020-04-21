@@ -483,13 +483,22 @@ img {
  * ----------------------------------------
  */
 .fadein {
-  -webkit-animation: slide-in-bottom 0.3s both;
+  -webkit-animation: slide-in-bottom 0.5s both;
   animation: slide-in-bottom 0.5s both; }
+
+.fadein .delay1 {
+  animation-delay: 0.0s; }
+
+.fadein .delay2 {
+  animation-delay: 0.125s; }
+
+.fadein .delay3 {
+  animation-delay: 0.25s; }
 
 @-webkit-keyframes slide-in-bottom {
   0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
     opacity: 0; }
   100% {
     -webkit-transform: translateY(0);
@@ -497,8 +506,8 @@ img {
     opacity: 1; } }
 @keyframes slide-in-bottom {
   0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
     opacity: 0; }
   100% {
     -webkit-transform: translateY(0);
@@ -814,12 +823,7 @@ a {
   .intro {
     margin: 6rem 0; } }
 .hero-image {
-  border: 0 !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.2s ease; }
+  border: 0 !important; }
 
 .intro {
   margin-bottom: 4rem; }
