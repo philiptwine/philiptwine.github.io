@@ -801,6 +801,12 @@ a {
   margin-left: 0;
   padding-left: 0; }
 
+.swirl {
+  z-index: -1000;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
 @media only screen and (min-width: 768px) {
   #canvas {
     padding: 40px; }
