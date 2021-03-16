@@ -1,4 +1,4 @@
-theme: jekyll-theme-midnight
+theme: jekyll-theme-tactile
 
 # Set permalinks for all pages
 permalink: /:categories/:title
