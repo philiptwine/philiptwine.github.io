@@ -4,317 +4,485 @@
     <title>Maya's Magical Multiplication Machine</title>
     <style>
     
-    	:root {
-    		--text-grey-900: #042f2e;
-			--text-green-500: #29FABF;
-			--text-green-600: #2cb58b;
-			--text-green-700: #27755b;
-			
-    	}
-    
-        body {
-            font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            color: var(--text-grey-900);     
-            font-size: 16px;
-            margin: 0;
-        }
-        
-        #container {
-        	display: flex;
-			padding: 2rem;              	
-        }
-        
-        #start {
-        	display: flex;
-			justify-content: center;        	
-        	flex-direction: column;  	
-        	height: 90vh;
-        	line-height: 32rem;
-        	gap: 16px;
-        }
+    	*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-		h1 { /* Title */
-			margin: 0;
-			font-size: 1rem;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-		}
-		
-		h2 {
-			margin: 0;
-			font-size: 1.8rem;
-			font-weight: 550;
-			line-height: normal;			
-		}
-	
-        
-        #tools {
-        	display: flex;
-			justify-content: space-between;
-			flex-direction: column;
-			align-items: left;
-			gap: 1rem;
-			position: fixed;
-			right: 1.5rem;
-			top: 1.5rem;
-			width: 12rem;
-        }
+:root {
+  --text-grey-100: #2d3047;
+  --text-grey-500: #eaeaea;
+  --text-grey-900: #ffffff;
+  --text-green-500: #00eab6;
+  --text-green-600: #2cb58b;
+  --text-green-700: #27755b;
+}
 
-        #timer {
-            display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 0.5rem;
-			background: #EAEAEA;
-        	font-size: 1rem;
-			font-weight: 400;
-			line-height: normal;
+html,
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--text-grey-100);
+  font-size: 16px;
+  margin: 0;
+}
 
-        }
-        
-        button {
-        	display: flex;
-			padding: 0.5rem 1rem;
-			justify-content: center;
-			background: var(--text-green-500);
-			font-size: 1rem;
-			line-height: normal;
-			border: 0;
-			cursor: pointer;
-        }
-        
-        button:hover {
-        	background: var(--text-green-600);
-        }
-        
-        button:active {
-			background: var(--text-green-700);
-        }
-        
-        #answerBtn {
-        	display:none
-        }
-        
-        #startBtn {
-			max-width: 6rem;
-        }
-        
-        #score {
-        	display: flex;
-			justify-content: center;
-			align-items: center;        	
-        	font-size: 1rem;
-        }
-        
-        #questions {
-			display: inline-flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: flex-start;
-			gap: 16px;
-		}
-        
-        .question {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-        	justify-content: space-between;			
-			gap: 8px;
-  		}
-        
-        .col1 {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			width: 64px;
-        }
-        
-        .col2 {
-			display: flex;
-			align-items: center;		
-        }
-        
-        .col3 {
-			display: flex;
-			align-items: center;
-        }
-        
-        input {
-        	display: flex;
-			width: 48px;
-			padding: 8px;
-			align-items: center;
-			font-size: 1rem;
-			gap: 8px;
-			border-radius: 2px;
-			border: 1px solid var(--text-grey-900);
-		}
-		
-		/* Chrome, Safari, Edge, Opera */
-		input::-webkit-outer-spin-button,
-		input::-webkit-inner-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
+#wrapper {
+  padding: 0 2rem;
+}
 
-		/* Firefox */
-		input[type=number] {
-			-moz-appearance: textfield;
-		}
-	    
-	    .reveal {
-	    	display: flex;
-	    }
+header,
+footer {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: var(--text-grey-900);
+}
+
+header {
+  top: 0;
+  left: 1rem;
+  border-bottom: 0.125rem solid var(--text-grey-100);
+}
+
+footer {
+  display: none;
+  bottom: 0;
+  left: 1rem;
+  padding-top: 1rem;
+  border-top: 0.125rem solid var(--text-grey-100);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container for select menus */
+.controls {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 2rem;
+  height: 2.75rem;
+}
+
+.options {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 0.75rem;
+  height: 2.75rem;
+}
+
+button {
+  padding: 0 1rem;
+  justify-content: center;
+  align-items: center;
+  background: var(--text-green-500);
+  color: var(--text-grey-100);
+  font-size: 1rem;
+  line-height: normal;
+  min-height: 2.75rem;
+  min-width: 10rem;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+button::after {
+  content: "→";
+  margin-left: 0.5rem;
+}
+
+h1,
+p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  min-height: 2.75rem;
+  background: var(--text-grey-500);
+}
+
+button:hover {
+  background: var(--text-green-600);
+}
+
+button:active {
+  background: var(--text-green-700);
+}
+
+.inactive,
+.inactive:hover {
+  background: var(--text-grey-400);
+  cursor: default;
+  color: var(--text-grey-500);
+}
+
+#score {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+}
+
+.cell {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.cellSum {
+  width: 66px;
+}
+
+input {
+  min-height: 2rem;
+  font-size: 1rem;
+  max-width: 6rem;
+  border: 2px solid var(--text-grey-100);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.reveal {
+  display: flex;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  outline: none;
+}
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+  border: 2px solid var(--text-grey-100);
+  height: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.select select,
+.select::after {
+  grid-area: select;
+}
+.select:not(.select--multiple)::after {
+  content: "";
+  justify-self: end;
+  width: 0.7rem;
+  height: 0.5rem;
+  background-color: var(--text-grey-100);
+  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+option {
+  color: var(--text-grey-900);
+}
+
+label {
+  font-size: 1rem;
+}
+
+.select + label {
+  margin-top: 1rem;
+}
         
     </style>
 </head>
 <body>
-	<div id="container">
-	<div id="tools">
-		<div id="timer">05:00</div>
-		<button id="answerBtn" onclick="checkAnswers()">Check your score</button>
-	    <div id="score"></div>
-	</div>
-	<div id="start">
-    		<h1>Maya's Magical Multiplication Machine</h1>
-    		<h2 class="motivation">You've got this Maya.</h2>
-    		<button id="startBtn" onclick="generateQuestions()">Start</button>
-    	</div>
-    <div id="questions"></div>
 
+  <div id="wrapper">
+
+    <header id="header">
+      <div class="title">
+        <h1>Maya's Magical Multiplication Machine</h1>
+      </div>
+      <div class="controls">
+        <div class="options">
+          <div class="select">
+            <select id="questionSelect">
+              <option value="36">36 questions</option>
+              <option value="72" selected="selected">72 questions</option>
+              <option value="144">144 questions</option>
+            </select>
+          </div>
+          <div>in</div>
+          <div class="select">
+            <select id="timeSelect">
+              <option value="300" selected="selected">5 mins</option>
+              <option value="600">10 mins</option>
+            </select>
+          </div>
+        </div>
+        <button id="startBtn" onclick="generateQuestions(document.getElementById('questionSelect').value, document.getElementById('timeSelect').value)">Start</button>
+      </div>
+    </header>
+
+    <div id="questions">
     </div>
+
+    <footer id="footer">
+      <div class="title">
+        <p class="motivation">Onwards!</p>
+      </div>
+      <div class="controls">
+        <div class="options">
+          <div id="timer">00:00</div>
+        </div>
+        <button id="answerBtn" onclick="checkAnswers(document.getElementById('questionSelect').value)">Check your score</button>
+      </div>
+    </footer>
+
+  </div>
     
     <script>
-        // Function to generate random multiplication questions
-        function generateQuestions() {
+let intervalId; // Global variable to store the interval ID
+const answerBtn = document.getElementById("answerBtn");
 
-			const display = document.getElementById("timer");
-			const questionsDiv = document.getElementById('questions');
-            var answerBtn = document.getElementById('answerBtn');
-            var startPane = document.getElementById('start');
-            startPane.style.display = "none";
-            
-            questionsDiv.innerHTML = '';
+function generateQuestions(questionTotal, countdownTime) {
+  const questionsDiv = document.getElementById("questions");
+  const headerPane = document.getElementById("header");
+  const toolsPane = document.getElementById("footer");
+  headerPane.style.display = "none";
+  toolsPane.style.display = "flex";
 
-            for (let i = 0; i < 72; i++) {
-                const num1 = Math.floor(Math.random() * 12) + 1;
-                const num2 = Math.floor(Math.random() * 12) + 1;
+  // Call the function on page load to set an initial motivation
+  setRandomMotivation();
 
-                var question = document.createElement('div');
-                question.classList.add('question');
-                
-                var col1 = document.createElement("div");
-				col1.className = "col1";
-				question.appendChild(col1);
-                col1.textContent = `${num1} x ${num2} =`;
-                
-                var col2 = document.createElement("div");
-               	col2.className = "col2";
-               	question.appendChild(col2);
-                
-                var answerInput = document.createElement('input');
-                answerInput.type = 'number';
-                answerInput.addEventListener('keydown', handleInputKeyPress);
-                col2.appendChild(answerInput);
+  questionsDiv.innerHTML = "";
+  const generatedQuestions = []; // Array to keep track of generated questions
 
-                questionsDiv.appendChild(question);
-            }
-            
-            startTimer(300, display);
-            answerBtn.style.display = "flex";
+  while (generatedQuestions.length < questionTotal) {
+    const num1 = Math.floor(Math.random() * 12) + 1;
+    const num2 = Math.floor(Math.random() * 12) + 1;
+    const questionText = `${num1} x ${num2} =`;
 
-        }
+    // Check if the question has already been generated
+    if (!generatedQuestions.includes(questionText)) {
+      const question = document.createElement("div");
+      question.classList.add("row");
 
-        // Function to handle key press events on input fields
-        function handleInputKeyPress(event) {
-            if (event.key === 'Enter' || event.key === 'Tab') {
-                const inputFields = document.querySelectorAll('input[type="number"]');
-                const currentIndex = Array.from(inputFields).indexOf(event.target);
-                if (currentIndex < inputFields.length - 1) {
-                    inputFields[currentIndex + 1].focus();
-                } else {
-                    inputFields[0].focus();
-                }
-            }
-        }
+      const col1 = document.createElement("div");
+      col1.className = "cellSum";
+      question.appendChild(col1);
+      col1.textContent = questionText;
 
-        // Function to check answers and display results
-        function checkAnswers() {
-            const inputFields = document.querySelectorAll('input[type="number"]');
-            let correctAnswers = 0;
+      const col2 = document.createElement("div");
+      col2.className = "cell";
+      question.appendChild(col2);
 
-            for (let i = 0; i < inputFields.length; i++) {
-                const input = inputFields[i];
-                const question = input.parentElement.parentElement.textContent.trim();
-                const [num1, num2] = question.split('x').map(item => parseInt(item.trim(), 10));
-                const userAnswer = parseInt(input.value, 10);
-                
-                const result = document.createElement('div');
-                result.classList.add('col3');
+      const answerInput = document.createElement("input");
+      answerInput.type = "number";
+      answerInput.addEventListener("keydown", handleInputKeyPress);
+      col2.appendChild(answerInput);
 
-                if (userAnswer === num1 * num2) {
-					result.textContent = '\ud83d\udc4d';
-                    result.classList.add('correct');
-                    correctAnswers++;
-                } else {
-                    result.textContent = `\ud83d\udc4e (${num1 * num2})`;
-                    result.classList.add('incorrect');
-                }
+      questionsDiv.appendChild(question);
 
-                input.parentElement.parentElement.appendChild(result);
-            }
+      // Add the generated question to the array
+      generatedQuestions.push(questionText);
+    }
+  }
 
-			const scoreDiv = document.getElementById('score');
-            score.textContent = `You got: ${correctAnswers} / 72`;
-        }
+  // Set keyboard focus on the first input field
+  const firstInputField = questionsDiv.querySelector("input[type='number']");
+  if (firstInputField) {
+    firstInputField.focus();
+  }
 
-        // Timer Countdown
-        function startTimer(duration, display) {
-            let timer = duration, minutes, seconds;
-            const intervalId = setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+  // Start the timer when generating questions
+  const timerDisplay = document.getElementById("timer");
+  countdownTimer(countdownTime, timerDisplay);
+  answerBtn.style.display = "flex";
+}
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+function handleInputKeyPress(event) {
+  const inputFields = document.querySelectorAll('input[type="number"]');
+  const currentIndex = Array.from(inputFields).indexOf(event.target);
 
-                display.textContent = minutes + ":" + seconds;
+  if (event.key === "Enter") {
+    // Handle Enter key press (optional behavior)
+    event.preventDefault(); // Prevent form submission on Enter key press
+    const nextIndex = (currentIndex + 1) % inputFields.length;
+    inputFields[nextIndex].focus();
+  } else if (event.key === "Tab") {
+    event.preventDefault(); // Prevent default Tab behavior
+    if (!event.shiftKey) {
+      // Handle Tab key press (forward)
+      const nextIndex = (currentIndex + 1) % inputFields.length;
+      inputFields[nextIndex].focus();
+    } else {
+      // Handle Shift+Tab key press (backward)
+      const prevIndex =
+        (currentIndex - 1 + inputFields.length) % inputFields.length;
+      inputFields[prevIndex].focus();
+    }
+  }
+}
 
-                if (--timer < 0) {
-                    clearInterval(intervalId);
-                    alert("Time's up! Press 'Check your score' to see your results.");
-                }
-            }, 1000);
-        }  
+// Function to check answers and display results
+function checkAnswers(questionTotal) {
+  const inputFields = document.querySelectorAll('input[type="number"]');
+  let correctAnswers = 0;
 
-        function getRandomLine(lines) {
-            return lines[Math.floor(Math.random() * lines.length)];
-        }
+  // Stop the timer when checking answers
+  clearInterval(intervalId);
 
-        function setRandomMotivation() {
-            const motivations = [
-                "You've got this Maya!",
-                "Do or do not, there is no try",
-                "144, 144, 144, 144, 144, 144",
-                "72 out of 72 = a Mars bar",
-                "'Cause, baby, you're a firework",
-                "Popcorn is proud of you",
-                "Allez Maya",
-		"Take a deep breath. Now take another. Ready? Go!",
-                "Don't listen to the voice in your head that says you can't do this"
-                // Add more motivation lines as needed
-            ];
+  // Disable answer button and add "inactive" class
+  const answerBtn = document.getElementById("answerBtn");
+  const parentElement = answerBtn.parentElement;
+  parentElement.removeChild(answerBtn);
 
-            const motivationElement = document.querySelector('.motivation');
-            const randomMotivation = getRandomLine(motivations);
-            motivationElement.textContent = randomMotivation;
-        }
+  for (let i = 0; i < inputFields.length; i++) {
+    const input = inputFields[i];
+    const question = input.parentElement.parentElement.textContent.trim();
+    const [num1, num2] = question
+      .split("x")
+      .map((item) => parseInt(item.trim(), 10));
+    const userAnswer = parseInt(input.value, 10);
 
-        // Call the function on page load to set an initial motivation
-        setRandomMotivation();
+    const result = document.createElement("div");
+    result.classList.add("cell");
 
+    if (userAnswer === num1 * num2) {
+      result.textContent = "\ud83d\udc4d";
+      result.classList.add("correct");
+      correctAnswers++;
+    } else {
+      result.textContent = `\ud83d\udc4e (${num1 * num2})`;
+      result.classList.add("incorrect");
+    }
 
+    input.parentElement.parentElement.appendChild(result);
+  }
+
+  const footer = document.getElementById("footer");
+  const scoreDiv = footer.children[0];
+  const pTag = document.createElement("p");
+  pTag.textContent = `You got: ${correctAnswers} / ${questionTotal}`;
+  scoreDiv.innerHTML = ""; // Clear the existing content
+  scoreDiv.appendChild(pTag); // Add the paragraph
+
+  const controlDiv = footer.children[1];
+  const tryAgainButton = document.createElement("button");
+  tryAgainButton.textContent = "Try again?";
+  tryAgainButton.addEventListener("click", function () {
+    window.location.href = window.location.href;
+  });
+
+  controlDiv.appendChild(tryAgainButton); // Add the button
+
+  const timer = document.getElementById("timer");
+  timer.style.display = "none";
+
+  // Check if all answers are correct and call emojigeddon
+  if (correctAnswers === inputFields.length) {
+    emojigeddon();
+  }
+}
+
+// Timer Countdown
+function countdownTimer(duration, display) {
+  let timer = duration,
+    minutes,
+    seconds;
+
+  intervalId = setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      clearInterval(intervalId);
+      alert("Time's up! Press 'Check your score' to see your results.");
+    }
+  }, 1000);
+}
+
+function getRandomLine(lines) {
+  return lines[Math.floor(Math.random() * lines.length)];
+}
+
+function setRandomMotivation() {
+  const motivator = document.getElementById("motivator");
+  // motivator.style.display = "flex";
+
+  const motivations = [
+    "You've got this Maya!",
+    "Do or do not, there is no try",
+    "144, 144, 144, 144, 144, 144",
+    "100% = a Mars bar",
+    "'Cause, baby, you're a firework",
+    "Popcorn is proud of you",
+    "Allez Maya",
+    "Take a deep breath. Ready? Let's go!",
+    "On y va",
+    "You never lose; you either win or you learn"
+    // Add more motivation lines as needed
+  ];
+
+  const motivationElement = document.querySelector(".motivation");
+  const randomMotivation = getRandomLine(motivations);
+  motivationElement.textContent = randomMotivation;
+}
 
     </script>
 </body>
