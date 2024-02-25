@@ -1,0 +1,6 @@
+I"�<p>Lately, I’ve been getting involved with some sketchy stuff. You know what I’m talking about–data migrations.</p>
+
+<p>I’ve been rolling out changes that have a significant risk of breaking our production environment for mission-critical services. It’s been exciting work (keep your eyes out for more posts on the exact project, coming soon™️), but I’ve definitely caused a couple incidents along the way.</p>
+
+<p>After accidentally taking down a key service for a couple hours, I decided I needed to have a better pre-deploy process for these changes. I did some thinking and came up with a short checklist to run through before I press the shiny green button.</p>
+:ET
