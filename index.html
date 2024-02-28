@@ -10,7 +10,7 @@
   <title>Refilter by Philip Twine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">  
 </head>
 </head>
@@ -20,7 +20,7 @@
     
     
     <div class="title">
-        <p><a href="/" title="Homepage" tabindex="0">Refilter</a></p>
+        <a href="/" title="Homepage" tabindex="0"><div id="logo"></div></a>
     </div>
 
     <div class="date">
@@ -45,6 +45,37 @@
         <p>Copyright 2024 Philip Twine / <a href="https://www.linkedin.com/in/philiptwine/">LinkedIn</a> / <a href="https://twitter.com/philiptwine">X</a></p>
     </footer>
   </div>
+
+<script>
+
+  // Generate monochromatic color for stripes (shades of gray)
+  function generateMonochromaticColor() {
+    const shades = ['#0f172a', '#475569', '#cbd5e1', '#FFFFFF']; // Predefined shades of gray
+    return shades[Math.floor(Math.random() * shades.length)];
+  }
+
+  // Generate stripe pattern with variable width and limited monochromatic colors
+  function generateStripes() {
+    const logo = document.getElementById('logo');
+    const numStripes = 8;
+    const maxStripeWidth = 48; // Maximum width of a stripe
+    const stripeHeight = 48 / numStripes; // Height of each stripe
+    
+    for (let i = 0; i < numStripes; i++) {
+      const stripeWidth = Math.floor(Math.random() * (maxStripeWidth + 1)); // Random width within range
+      const stripe = document.createElement('div');
+      stripe.style.width = `${stripeWidth}px`;
+      stripe.style.height = `${stripeHeight}px`;
+      stripe.style.backgroundColor = generateMonochromaticColor();
+      logo.appendChild(stripe);
+    }
+  }
+
+  // Generate the stripe pattern on load
+  window.onload = generateStripes;
+
+</script>
+
 </body>
 
 </html>
