@@ -7,9 +7,10 @@
   --space-xl: 3rem;
   --space-2xl: 4rem;
 
-  --font-size-s: 0.83rem;
+  --font-size-sm: 0.83rem;
   --font-size-base: 1rem;
-  --font-size-l: 1.618rem;
+  --font-size-md: 1.309rem;
+  --font-size-lg: 1.618rem;
   
   --font-weight-400: 400;
   --font-weight-500: 500;
@@ -17,7 +18,8 @@
 
   --font-family: "DM Mono", monospace;
 
-  --line-height-md: 1.61rem; 
+  --line-height-md: 1.61rem;
+  --line-height-lg: 2.61rem;
 
   --grey-50: #f8fafc;
   --grey-100: #f1f5f9;
@@ -26,18 +28,16 @@
   --grey-400: #94a3b8;
   --grey-500: #64748b;
   --grey-600: #475569;
-  --grey-700: #334155;
+  /* --grey-700: #334155; */
   --grey-800: #1e293b;
   --grey-900: #0f172a;
 
   --green-500: #00E2A1;
-
-  --border: 1px solid var(--grey-600);
 }
 
 html {
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--grey-600);
   font-family: var(--font-family);
   font-optical-sizing: auto;
@@ -54,13 +54,21 @@ body {
 h1 {
   padding: 0;
   margin: 0 0 var(--space-sm) 0;
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
   font-weight: var(--font-weight-700);
 }
 
 h2 {
   padding: 0;
-  margin: 0 0 var(--space-sm) 0;
+  margin: var(--space-lg) 0 var(--space-sm) 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-700);
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-700);
 }
@@ -198,7 +206,7 @@ footer {
   }
 
   article {
-    grid-column: col 3 / span 4;
+    grid-column: col 3 / span 3;
     align-content: baseline;
     grid-row: 2;
   }
