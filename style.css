@@ -207,7 +207,7 @@ footer {
   }
 
   article {
-    grid-column: col 3 / span 3;
+    grid-column: col 3 / span 4;
     align-content: baseline;
     grid-row: 2;
   }
