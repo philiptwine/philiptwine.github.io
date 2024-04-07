@@ -1,0 +1,244 @@
+/* Define variables for consistency */
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  --font-size-sm: 0.83rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.309rem;
+  --font-size-lg: 1.618rem;
+  
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  --font-family: "Inter", sans-serif;
+
+  --line-height-md: 1.61rem;
+  --line-height-lg: 2.61rem;
+
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-800: #1e293b;
+  --grey-900: #020617;
+
+  --green-500: #00E2A1;
+}
+
+html {
+  
+}
+
+body {
+  padding: var(--space-lg);
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: var(--line-height-md);
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-400);
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--grey-50);
+    color: var(--grey-600);
+  }
+
+  a {
+    color: var(--grey-600);
+    text-decoration: none;
+    border-bottom: 2px solid var(--green-500);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--grey-900);
+    color: var(--grey-300);
+  }
+
+  a {
+    color: var(--grey-300);
+    text-decoration: none;
+    border-bottom: 2px solid var(--green-500);
+  }
+
+}
+  
+h1 {
+  padding: 0;
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
+  font-weight: var(--font-weight-500);
+}
+
+h2 {
+  padding: 0;
+  margin: var(--space-lg) 0 var(--space-sm) 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-500);
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-500);
+}
+
+p {
+    font-size: var(--font-size-base);
+    padding: 0;
+    margin: 0 0 var(--space-sm) 0;
+}
+
+a:hover, a:active {
+  color: var(--grey-900);
+  background: var(--green-500);
+}
+
+ul {
+  margin: 0 0 var(--space-md) 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 0 var(--space-xs);
+  list-style:;
+  font-size: inherit;
+}
+
+main {
+  margin: var(--space-l) auto 0;
+  display: grid;
+  grid-gap: var(--space-lg);
+  grid-template-columns: 1fr;
+  /* grid-template-rows: 64px 1fr 64px; */
+}
+
+header {
+  grid-column: 1;
+  grid-row: 1;
+  padding-bottom: 8vh;
+}
+
+aside {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.posts {
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+time {
+  grid-column: 1;
+  color: var(--grey-400);
+}
+
+article {
+  grid-column: 1;
+}
+
+footer {
+  grid-column: 1;
+  grid-row: 4;
+  padding-top: 8vh;
+  /* color: var(--grey-800); */
+}
+
+/* Responsive breakpoints */
+@media screen and (min-width: 540px) {
+  main {
+    margin: var(--space-xl) auto 0;
+    /* max-width: calc(var(--space-xs)*96); */
+    grid-gap: var(--space-md);
+    grid-template-columns: repeat(8, [col] 1fr);
+    grid-template-rows: 128px auto 128px;
+    align-content: baseline;
+  }
+
+  header {
+    grid-column: col 1 / span 2;
+    grid-row: 1;
+  }
+
+  nav {
+    grid-column: col 1 / span 1;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  aside {
+    grid-column: col 1 / span 3;
+    grid-row: 2;
+  }
+
+  .posts {
+    grid-column: col 5 / span 4;
+    grid-row: 2;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+  }
+
+  .projects {
+    grid-column: col 5 / span 4;
+    grid-row: 3;
+  }
+
+  .side-projects {
+    grid-column: col 5 / span 4;
+    grid-row: 4;
+  }
+
+  time {
+    grid-column: col 3 / span 4;
+    align-content: baseline;
+    grid-row: 1;
+  }
+
+  article {
+    grid-column: col 3 / span 4;
+    align-content: baseline;
+    grid-row: 2;
+  }
+
+  h1 {
+    /* margin: var(--space-2xl) 0; */
+  }
+
+  footer {
+    grid-column: col 1 / span 4;
+    grid-row: 3;
+  }
+
+}
