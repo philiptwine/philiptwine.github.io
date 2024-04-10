@@ -1,7 +1,6 @@
 ---
 title: The Transformative Power of Simple Questions
-layout: layouts/base
-tag: article
+date: 2024-03-01
 ---
 
 # The Transformative Power of Simple Questions

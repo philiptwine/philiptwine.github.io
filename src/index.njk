@@ -1,0 +1,25 @@
+---
+title: Refilter
+---
+
+{% include "snippets/head.njk" %}
+        
+<aside>
+    <p>A dive into the macro and micro of software design, with hints, tips, and tools for design strategy, processes, leadership, and nerding out on design details.</p>
+</aside>
+
+<section class="posts">
+    <h3>Posts</h3>
+    
+    {% for post in collections.posts %}
+    <div class="post">
+        <p>
+            <a href="{{ post.url }}" title="View {{ post.data.title }}" tabindex="1">{{ post.data.title }}</a>
+            <time datetime="{{ post.date | postDate }}">{{ post.date | postDate }}</time>
+        </p>
+    </div>
+    {% endfor %}
+    
+</section>
+
+{% include "snippets/footer.njk" %}

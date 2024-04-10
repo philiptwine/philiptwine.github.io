@@ -1,0 +1,9 @@
+{% include "snippets/head.njk" %}
+
+    <time datetime="{{ page.date | postDate }}">{{ page.date | postDate }}</time>
+
+    <article>
+        {{ content | safe }}
+    </article>
+
+{% include "snippets/footer.njk" %}
